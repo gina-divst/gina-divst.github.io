@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Website</title>
+    <style>
+        /* CSS */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fefff2;
+            color: #000000;
+        }
+        
+        nav {
+            background: #2c3e50;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav button {
+            background: none;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        nav button:hover {
+            background: #34495e;
+        }
+        
+        nav button.active {
+            background: #3498db;
+            font-weight: bold;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 20px auto;
+            border: 5px solid #3498db;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        h1, h2, h3 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        ul {
+            line-height: 1.8;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .contact-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-card i {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            color: #2c3e50;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: #3498db;
+        }
+        
+        /* New styles for motto and skills */
+        .motto-section {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+            border-left: 5px solid #1976d2;
+        }
+        
+        .motto-text {
+            font-style: italic;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        .skills-section {
+            margin-top: 30px;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .skill-item {
+            background-color: #e8f5e9;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .section-title i {
+            color: #3498db;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <button onclick="openTab('Profile')" class="active">Profile</button>
+        <button onclick="openTab('contact')">Contact</button>
+    </nav>
+
+    <!-- Content 1: Profile -->
+    <div id="Profile" class="tab-content active">
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQG-OLx83XlW3Q/profile-displayphoto-shrink_400_400/B56ZZyDt4GHAAg-/0/1745670301413?e=1751500800&v=beta&t=ckBdxaWErnWEMLxx3TFaZJDNG_7jFpxQ-bHP1Hsomx0" alt="Profile Photo" class="profile-img">
+        <h1>Gina Wiyanti Pulungan</h1>
+        <p style="text-align: center;"><strong>Universal Academy of Information Management and Computer Science</strong></p>
+        <p style="text-align: center;">2024 - 2028</p>
+        
+        <!-- Motto Section -->
+        <div class="motto-section">
+            <h3 class="section-title"><i class="fas fa-quote-left"></i> My Motto</h3>
+            <p class="motto-text">"Never stop learning, because life never stops teaching"</p>
+            <p>- Continuous improvement through knowledge and experience -</p>
+        </div>
+        
+        <!-- Skills Section -->
+        <div class="skills-section">
+            <h3 class="section-title"><i class="fas fa-laptop-code"></i> My Skills</h3>
+            <div class="skills-container">
+                <span class="skill-item">Publick Speaking</span>
+                <span class="skill-item">Digital Marketing</span>
+                <span class="skill-item">Presentation Designer</span>
+                <span class="skill-item">Web Development</span>
+                <span class="skill-item">Database</span>
+                <span class="skill-item">Draw</span>
+                <span class="skill-item">Problem Solving</span>
+                <span class="skill-item">Teamwork</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content 2: Contact -->
+    <div id="contact" class="tab-content">
+        <h2>Contact Information</h2>
+        
+        <div class="contact-info">
+            <div class="contact-card">
+                <i class="fas fa-phone"></i>
+                <h3>Phone</h3>
+                <p>+62 822-7737-7108</p>
+            </div>
+            
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>ginawiyantiplngan@gmail.com</p>
+            </div>
+            
+            <div class="contact-card">
+                <i class="fab fa-linkedin"></i>
+                <h3>LinkedIn</h3>
+                <p><a href="https://linkedin.com/in/gina-wiyanti" target="_blank">linkedin.com/in/gina-wiyanti</a></p>
+            </div>
+            
+            <div class="contact-card">
+                <i class="fab fa-github"></i>
+                <h3>GitHub</h3>
+                <p><a href="https://github.com/gina-divts" target="_blank">github.com/gina-divts</a></p>
+            </div>
+        </div>
+        
+        <h3 style="text-align: center; margin-top: 30px;">Find Me On Social Media</h3>
+        <div class="social-icons">
+            <a href="https://instagram.com/gina_wyntp" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/gina_divts" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://facebook.com/gina.wiyanti" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://t.me/divit" target="_blank"><i class="fab fa-telegram"></i></a>
+        </div>
+    </div>
+
+    <script>
+        // Function to switch tabs
+        function openTab(tabName) {
+            // Hide all tabs
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+            
+            // Deactivate all buttons
+            const tabButtons = document.getElementsByTagName('button');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
